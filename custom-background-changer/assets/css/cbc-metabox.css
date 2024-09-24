@@ -1,0 +1,45 @@
+/*
+ * Created by Anshul Gangrade.
+ */
+
+#cbc_metafield{
+    overflow: hidden;
+    padding-bottom: 1em;
+}
+#cbc_metafield .cbc-info{
+    background: #dce7f7;
+    border-bottom-color: transparent !important;
+    position: relative;
+}
+#cbc_metafield .cbc-info h2{
+    box-shadow: -3px 0 0 0 #516676;
+    color: #516676;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 15px 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    margin-top: 20px;
+}
+#cbc_metafield .cbc-field-wrap {
+    display: flex;
+    padding: 5px 20px;
+    border-bottom: 1px solid #ebecec;
+}
+#cbc_metafield .cbc-field-wrap:last-child{ border-bottom: none; }
+#cbc_metafield .cbc-row-title{
+    display: block;
+    float: left;
+    width: 250px;
+    font-size: 14px;
+    color: #39464e;
+    font-weight: 500;
+    padding: 15px 10px 15px 0;
+}
+#cbc_metafield .cbc-row-content{float: left; padding: 15px 10px 15px 0;}
+#cbc_metafield p{ clear: both; }
+.cbc-row-content label{ display: block;line-height: 1.75em;}
+span.cbc-row-content  label {display: inline;width: 100px; float: left;}
+#cbc_metafield p {clear: both;}
+#cbc_metafield input[type="text"], #cbc_metafield select{min-width:200px;}
