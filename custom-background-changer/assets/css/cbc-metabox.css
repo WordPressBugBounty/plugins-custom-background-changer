@@ -1,45 +1,333 @@
 /*
- * Created by Anshul Gangrade.
+ * Custom Background Changer - Admin Metabox Styles v4.1.1
+ * Created by Anshul Labs
  */
 
-#cbc_metafield{
+/* =========================================
+   Metabox Wrapper
+   ========================================= */
+#cbc_metafield {
+    padding: 0;
     overflow: hidden;
-    padding-bottom: 1em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
-#cbc_metafield .cbc-info{
-    background: #dce7f7;
-    border-bottom-color: transparent !important;
-    position: relative;
+
+/* =========================================
+   Enable Toggle Row
+   ========================================= */
+.cbc-enable-row {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
+    border-left: 4px solid #2271b1;
+    padding: 12px 16px;
+    margin: 12px 12px 0;
+    border-radius: 0 6px 6px 0;
+    box-shadow: 0 1px 4px rgba(34, 113, 177, 0.08);
 }
-#cbc_metafield .cbc-info h2{
-    box-shadow: -3px 0 0 0 #516676;
-    color: #516676;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 15px 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    position: relative;
-    margin-top: 20px;
-}
-#cbc_metafield .cbc-field-wrap {
+.cbc-enable-row label {
+    font-weight: 600;
+    font-size: 13px;
     display: flex;
-    padding: 5px 20px;
-    border-bottom: 1px solid #ebecec;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: #1d2327;
 }
-#cbc_metafield .cbc-field-wrap:last-child{ border-bottom: none; }
-#cbc_metafield .cbc-row-title{
-    display: block;
-    float: left;
-    width: 250px;
+.cbc-enable-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #2271b1;
+    cursor: pointer;
+}
+
+/* =========================================
+   Tabs Navigation
+   ========================================= */
+.cbc-tabs-nav {
+    display: flex;
+    background: #1d2327;
+    margin: 12px 0 0;
+    padding: 10px 12px;
+    list-style: none;
+    gap: 6px;
+    border-radius: 0;
+}
+.cbc-tabs-nav li { margin: 0; }
+
+/* Default tab pill style */
+.cbc-tabs-nav a {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #a7aaad;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+    border: 1px solid transparent;
+}
+.cbc-tabs-nav a:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border-color: rgba(255,255,255,0.1);
+}
+
+/* Icon circle inside each tab */
+.cbc-tabs-nav .cbc-tab-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+.cbc-tabs-nav a:hover .cbc-tab-icon { transform: scale(1.1); }
+
+/* Tab 1 - Color: Purple */
+.cbc-tabs-nav li:nth-child(1) a .cbc-tab-icon { background: rgba(118, 75, 162, 0.25); }
+.cbc-tabs-nav li:nth-child(1).active a  { background: linear-gradient(135deg, #764ba2, #667eea); color: #fff; border-color: transparent; box-shadow: 0 3px 10px rgba(118,75,162,0.4); }
+.cbc-tabs-nav li:nth-child(1).active a .cbc-tab-icon { background: rgba(255,255,255,0.2); }
+
+/* Tab 2 - Image: Teal */
+.cbc-tabs-nav li:nth-child(2) a .cbc-tab-icon { background: rgba(0, 168, 132, 0.2); }
+.cbc-tabs-nav li:nth-child(2).active a  { background: linear-gradient(135deg, #00b09b, #22c55e); color: #fff; border-color: transparent; box-shadow: 0 3px 10px rgba(0,176,155,0.4); }
+.cbc-tabs-nav li:nth-child(2).active a .cbc-tab-icon { background: rgba(255,255,255,0.2); }
+
+/* Tab 3 - Overlay: Orange */
+.cbc-tabs-nav li:nth-child(3) a .cbc-tab-icon { background: rgba(240, 150, 20, 0.2); }
+.cbc-tabs-nav li:nth-child(3).active a  { background: linear-gradient(135deg, #f09619, #f7c948); color: #fff; border-color: transparent; box-shadow: 0 3px 10px rgba(240,150,20,0.4); }
+.cbc-tabs-nav li:nth-child(3).active a .cbc-tab-icon { background: rgba(255,255,255,0.2); }
+
+/* Tab 4 - Video: Red */
+.cbc-tabs-nav li:nth-child(4) a .cbc-tab-icon { background: rgba(239, 68, 68, 0.2); }
+.cbc-tabs-nav li:nth-child(4).active a  { background: linear-gradient(135deg, #ef4444, #f97316); color: #fff; border-color: transparent; box-shadow: 0 3px 10px rgba(239,68,68,0.4); }
+.cbc-tabs-nav li:nth-child(4).active a .cbc-tab-icon { background: rgba(255,255,255,0.2); }
+
+.cbc-tabs-nav .dashicons {
     font-size: 14px;
-    color: #39464e;
-    font-weight: 500;
-    padding: 15px 10px 15px 0;
+    width: 14px;
+    height: 14px;
+    line-height: 1.1;
+    color: inherit;
 }
-#cbc_metafield .cbc-row-content{float: left; padding: 15px 10px 15px 0;}
-#cbc_metafield p{ clear: both; }
-.cbc-row-content label{ display: block;line-height: 1.75em;}
-span.cbc-row-content  label {display: inline;width: 100px; float: left;}
-#cbc_metafield p {clear: both;}
-#cbc_metafield input[type="text"], #cbc_metafield select{min-width:200px;}
+
+/* =========================================
+   Tab Panels
+   ========================================= */
+.cbc-tab-panel {
+    display: none;
+    padding: 18px 20px 20px;
+    background: #fff;
+}
+.cbc-tab-panel.active { display: block; }
+
+/* =========================================
+   Section Title
+   ========================================= */
+.cbc-section-title {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #8c8f94;
+    border-bottom: 1px solid #f0f0f1;
+    padding-bottom: 8px;
+    margin: 0 0 16px 0;
+}
+
+/* =========================================
+   Field Rows
+   ========================================= */
+.cbc-field-row {
+    display: flex;
+    align-items: center;
+    padding: 9px 12px;
+    margin-bottom: 6px;
+    background: #f9f9f9;
+    border: 1px solid #ebebeb;
+    border-radius: 6px;
+    gap: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.cbc-field-row:hover {
+    border-color: #c3c4c7;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.cbc-field-row:last-child { margin-bottom: 0; }
+
+.cbc-field-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #3c434a;
+    min-width: 150px;
+    flex-shrink: 0;
+}
+
+.cbc-field-input { flex: 1; }
+
+.cbc-field-input input[type="text"],
+.cbc-field-input input[type="url"],
+.cbc-field-input select {
+    width: 100%;
+    min-width: 180px;
+    border-radius: 4px;
+    border: 1px solid #c3c4c7;
+    padding: 5px 8px;
+    font-size: 13px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.cbc-field-input input[type="text"]:focus,
+.cbc-field-input input[type="url"]:focus,
+.cbc-field-input select:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.15);
+    outline: none;
+}
+
+.cbc-field-input .description {
+    display: block;
+    font-size: 11px;
+    color: #8c8f94;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* =========================================
+   Radio Group
+   ========================================= */
+.cbc-radio-group { display: flex; gap: 18px; flex-wrap: wrap; }
+.cbc-radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #3c434a;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid #dcdcde;
+    background: #fff;
+    transition: all 0.15s;
+}
+.cbc-radio-group label:hover { border-color: #2271b1; color: #2271b1; background: #f0f4ff; }
+.cbc-radio-group input[type="radio"] { accent-color: #2271b1; }
+
+/* =========================================
+   Image / Video Upload Row
+   ========================================= */
+.cbc-image-upload-row { display: flex; align-items: center; gap: 8px; width: 100%; }
+.cbc-image-upload-row input[type="text"],
+.cbc-image-upload-row input[type="url"] { flex: 1; min-width: 0 !important; }
+.cbc-image-upload-row .button {
+    white-space: nowrap;
+    flex-shrink: 0;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 4px 10px;
+    height: 30px;
+}
+
+/* =========================================
+   Gradient Preview
+   ========================================= */
+.cbc-gradient-preview-wrap {
+    padding: 10px 12px 12px;
+    background: #f9f9f9;
+    border: 1px solid #ebebeb;
+    border-radius: 6px;
+    margin-top: 6px;
+}
+.cbc-gradient-preview-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #8c8f94;
+    margin-bottom: 8px;
+    display: block;
+}
+.cbc-gradient-preview {
+    width: 100%;
+    height: 50px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    transition: background 0.4s ease;
+}
+
+/* =========================================
+   Overlay Opacity Slider
+   ========================================= */
+.cbc-opacity-wrap { display: flex; align-items: center; gap: 10px; }
+#cbc-overlay-opacity {
+    -webkit-appearance: none;
+    width: 160px;
+    height: 5px;
+    background: linear-gradient(to right, #2271b1, #72aee6);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    min-width: unset !important;
+}
+#cbc-overlay-opacity::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border: 2px solid #2271b1;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    transition: transform 0.1s;
+}
+#cbc-overlay-opacity::-webkit-slider-thumb:hover { transform: scale(1.2); }
+.cbc-opacity-badge {
+    background: #2271b1;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 20px;
+    min-width: 32px;
+    text-align: center;
+}
+
+/* =========================================
+   Video Tab Info Box
+   ========================================= */
+.cbc-info-box {
+    background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%);
+    border-left: 4px solid #f0b429;
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    margin-bottom: 14px;
+}
+.cbc-info-box p {
+    margin: 0;
+    font-size: 12px;
+    color: #7a5c00;
+    line-height: 1.6;
+}
+.cbc-info-box .dashicons {
+    color: #f0b429;
+    font-size: 15px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+/* =========================================
+   Number input (angle)
+   ========================================= */
+#cbc-gradient-angle {
+    width: 70px !important;
+    min-width: 0 !important;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #c3c4c7;
+    padding: 5px 8px;
+}
